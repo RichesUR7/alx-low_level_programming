@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * main - main function
  *
@@ -8,18 +7,18 @@
 
 int main(void)
 {
-	int i;
+	int numbers = '0';
 
-	for (i = 0 ; i < 10 ; i++)
-        {
-		putchar(i + '0');
-	if (i != 9)
-          {
-
-		putchar(',');
-	  	putchar(' ');
-          }
-	}    
-
+	while (numbers <= '9')
+	{
+		putchar(numbers);
+		if (numbers != 9)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+		numbers++;
+	}
+	putchar('\n');
 	return (0);
 }
