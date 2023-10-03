@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * main - main function
  *
@@ -7,11 +6,18 @@
  */
 int main(void)
 {
-	char letter;
+	char alphabet = 'a';
 
-	for (letter = 'a' ; letter <= 'z' ; letter++)
-	        if (letter != 'e' && != 'q')
-			putchar(letter);
+	while (alphabet <= 'z')
+	{
+		if  (alphabet != 'q' && alphabet != 'e')
+		{
+			putchar(alphabet);
+		}
+		alphabet++;
+	}
 	putchar('\n');
 	return (0);
+
+
 }
