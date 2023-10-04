@@ -4,14 +4,13 @@
  * print_numbers - print numbers
  * Return: void
  */
-
 void print_numbers(void)
 {
-	char c;
+	int pr;
 
-	for (i = 0; i < 10; i++)
-
-		_putchar(i + '0')
-		-putchar('\n');	
-
+	for (pr = 48; pr <= 57; pr++)
+	{
+		_putchar(pr);
+	}
+	_putchar('\n');
 }
