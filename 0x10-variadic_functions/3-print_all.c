@@ -7,13 +7,11 @@
 */
 void print_all(const char * const format, ...)
 {
-	int i, check_stat;
-
+	int i, check_stat; /* declare variables and va_arg datatype */
 	char *str;
 	va_list spc;
 
-	va_start(spc, format);
-
+	va_start(spc, format); /* initialize var arguments */
 	i = 0;
 	while (format != NULL && format[i] != '\0')
 	{
@@ -21,7 +19,7 @@ void print_all(const char * const format, ...)
 		{
 			case 'i':
 				printf("%d", va_arg(spc, int));
-				check_stat = 0;
+				check_stat = 0; /* check if condition have been met */
 				break;
 			case 'f':
 				printf("%f", va_arg(spc, double));
@@ -41,10 +39,10 @@ void print_all(const char * const format, ...)
 				check_stat = 1;
 				break;
 		}
-		if (format[i + 1] != '\0' && check_stat == 0)
+		if (format[i + 1] != '\0' && check_stat == 0) /* if NOT NULL */
 			printf(", ");
-		i++;
+		i++; /* update step of iter var */
 	}
 	printf("\n");
-	va_end(spc);
+	va_end(spc); /* end traversal */
 }
