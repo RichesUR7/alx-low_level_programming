@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
-#include "list.h"
+#include "lists.h"
 /**
  * add_node_end - function name
  * @head: double pointer to list_t list
