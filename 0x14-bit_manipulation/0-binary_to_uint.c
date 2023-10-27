@@ -2,21 +2,34 @@
 #include <stdio.h>
 /**
  * binary_to_unit - function name
- * @b: A string that takes away binary numbers
+ * @b: Binary
  * Return: Number that are converted
  */
 unsigned int binary_to_unit(const char *b)
 {
-	int alx;
-	unsigned int riches = 0;
+	unsigned int ui;
+	int len, base_two;
 
 	if (!b)
 		return (0);
-	for (alx = 0; b[alx]; alx++)
+
+	ui = 0;
+
+	for (len = 0; b[len] != '\0'; len++)
+		;
+
+	for (len--, base_two = 1; len >= 0; len--, base_two *= 2)
 	{
-		if (b[alx] < '0' || b[alx] > '1')
+		if (b[len] != '0' && b[len] != '1')
+		{
 			return (0);
-		riches = 2 * riches + (b[alx] - '0');
+		}
+
+		if (b[len] & 1)
+		{
+			ui += base_two;
+		}
 	}
-	return (riches);
+
+	return (ui);
 }
