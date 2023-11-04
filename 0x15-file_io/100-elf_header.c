@@ -56,7 +56,7 @@ void print_magic(unsigned char *e_ident)
 	{
 		printf("%02x", e_ident[index]);
 
-		if (index == EL_NIDENT - 1)
+		if (index == EI_NIDENT - 1)
 			printf("\n");
 		else
 			printf(" ");
@@ -196,7 +196,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
 
-	printf(" Type:					");
+	printf("  Type:					");
 
 	switch (e_type)
 	{
@@ -232,7 +232,7 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
 		e_entry = ((e_entry << 8) & 0xFF00FF00) |
-			((e_entry >> 8) & 0xFF00FF);
+			  ((e_entry >> 8) & 0xFF00FF);
 		e_entry = (e_entry << 16) | (e_entry >> 16);
 	}
 
@@ -302,7 +302,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	print_class(header->e_ident);
 	print_data(header->e_ident);
 	print_version(header->e_ident);
-	print_obasi(header->e_ident);
+	print_osabi(header->e_ident);
 	print_abi(header->e_ident);
 	print_type(header->e_type, header->e_ident);
 	print_entry(header->e_entry, header->e_ident);
