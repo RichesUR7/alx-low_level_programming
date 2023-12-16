@@ -2,16 +2,16 @@
 
 /**
  * print_alphabet - this is the function of the task
- * Return: return 0
  */
 
 void print_alphabet(void)
 {
+	char letter;
 
-char c;
-for (c = 'a'; c <= 'z'; c++)
-{
-_putchar(c);
+	for (letter = 'a'; letter <= 'z'; letter++)
+	{
+	_putchar(letter);
+	}
+
+	_putchar('\n');
 }
-_putchar('\n');
-:P}
